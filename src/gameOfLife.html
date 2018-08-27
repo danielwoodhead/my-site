@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/styles.css" />
+
+        <title>Game of Life</title>
+    </head>
+    <body>
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-7 py-4">
+                            <h4 class="text-white">About</h4>
+                            <p class="text-muted">I'm a software developer and pianist. Currently working for Patient Platform Ltd. Check out <a href="https://www.patientaccess.com/">Patient Access</a> and <a href="https://patient.info/">patient.info</a>.</p>
+                        </div>
+                        <div class="col-sm-4 offset-md-1 py-4">
+                            <h4 class="text-white">Contact</h4>
+                            <ul class="list-unstyled">
+                                <li><p class="text-white">daniel.woodhead@hotmail.co.uk</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container d-flex justify-content-between">
+                <a href="./index.html" class="navbar-brand d-flex align-items-center">
+                    <strong>Daniel Woodhead</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                </div>
+            </div>
+        </header>
+        
+        <main role="main" style="margin-top: 2rem;">
+            <div class="container" >
+                <canvas id="myCanvas" width="200" height="100"></canvas>
+                <div style="margin: 10px 0 15px 0;">
+                    <h4>Controls</h4>
+                    <input type="button" value="Run" id="buttonRun" />
+                    <input type="button" value="Step" id="buttonStep" />
+                    <input type="button" value="Clear" id="buttonClear" />
+                </div>
+                <div style="margin: 10px 0 15px 0;">
+                    <h4>Preset patterns</h4>
+                    <input type="button" value="Acorn" id="buttonAcornPattern" />
+                    <input type="button" value="Gosper Glider Gun" id="buttonGunPattern" />
+                    <input type="button" value="Line" id="buttonLinePattern" />
+                </div>
+                <h2>Conway's Game of Life</h2>
+                <p>The Game of Life, also known as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.</p>
+                <p>The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</p>
+                <ol>
+                    <li>Any live cell with fewer than two live neighbors dies, as if by under population.</li>
+                    <li>Any live cell with two or three live neighbors lives on to the next generation.</li>
+                    <li>Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
+                    <li>Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
+                </ol>
+                <p>Source: <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life</a></p>
+            </div>
+        </main>
+
+        <footer class="footer bg-dark">
+            <div class="container">
+            </div>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="./js/gameOfLife.js"></script>
+    </body>
+</html>
