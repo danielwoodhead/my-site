@@ -47,6 +47,8 @@
     downButton.onmousedown = () => playerMoveDirection = directionEnum.down;
     downButton.onmouseup = () => playerMoveDirection = directionEnum.none;
 
+    setButtonsEnabled();
+
     document.onkeydown = function(event) {
         if (!running) {
             return;
@@ -100,10 +102,18 @@
     function setGameState(shouldRun) {
         running = shouldRun;
         startStopButton.setAttribute('value', running ? 'Stop': 'Start');
+        setButtonsEnabled();
 
         if (running) {
             step();
         }
+    }
+
+    function setButtonsEnabled() {
+        upButton.disabled = !running;
+        downButton.disabled = !running;
+        leftButton.disabled = !running;
+        rightButton.disabled = !running;
     }
 
     function step() {
