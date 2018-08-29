@@ -130,16 +130,36 @@
     function updatePlayerPosition() {
         switch (playerMoveDirection) {
             case directionEnum.up:
-                player.y = player.y - playerMoveSpeed;
+                var newY = player.y - playerMoveSpeed;
+                if (newY >= 0) {
+                    player.y = newY;
+                } else {
+                    player.y = 0;
+                }
                 break;
             case directionEnum.down:
-                player.y = player.y + playerMoveSpeed;
+                var newY = player.y + playerMoveSpeed;
+                if (newY + player.size <= canvasSettings.height) {
+                    player.y = newY;
+                } else {
+                    player.y = canvasSettings.height - player.size;
+                }
                 break;
             case directionEnum.left:
-                player.x = player.x - playerMoveSpeed;
+                var newX = player.x - playerMoveSpeed;
+                if (newX >= 0) {
+                    player.x = newX;
+                } else {
+                    player.x = 0;
+                }
                 break;
             case directionEnum.right:
-                player.x = player.x + playerMoveSpeed;
+                var newX = player.x + playerMoveSpeed;
+                if (newX + player.size <= canvasSettings.width) {
+                    player.x = newX;
+                } else {
+                    player.x = canvasSettings.width - player.size;
+                }
                 break;
         }
     }
