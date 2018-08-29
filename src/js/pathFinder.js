@@ -23,8 +23,6 @@
 
     var scoreElement = document.getElementById('score');
 
-    reset();
-
     var startStopButton = document.getElementById('buttonStartStop');
     startStopButton.addEventListener('click', startStop);
 
@@ -47,7 +45,7 @@
     downButton.onmousedown = () => playerMoveDirection = directionEnum.down;
     downButton.onmouseup = () => playerMoveDirection = directionEnum.none;
 
-    setButtonsEnabled();
+    reset();
 
     document.onkeydown = function(event) {
         if (!running) {
@@ -114,6 +112,7 @@
         downButton.disabled = !running;
         leftButton.disabled = !running;
         rightButton.disabled = !running;
+        startStopButton.disabled = false;
     }
 
     function step() {
@@ -125,6 +124,7 @@
 
         if (isGameOver()) {
             setGameState(false);
+            startStopButton.disabled = true;
             return;
         }
 
@@ -204,6 +204,7 @@
             { x: 600, originalX: 600, yStart: 70, yEnd: canvasSettings.height, thickness: 10 },
         ];
 
+        setButtonsEnabled();
         updateScore(0);
         blankCanvas();
         drawPlayer();
